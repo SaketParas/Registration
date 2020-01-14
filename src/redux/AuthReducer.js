@@ -1,4 +1,4 @@
-import { LOGIN, SIGNOUT_USER,SIGNUP } from './authAction'
+// import { LOGIN, SIGNOUT_USER,SIGNUP } from './authAction'
 const initialState = {
    loginData:{credentials: [],isAuth:false,currentUser:{}}
 
@@ -12,12 +12,12 @@ const postReducer= (state = initialState.loginData,action) => {
         case "LOGIN":
             let user = state.credentials.filter(el => el.username === action.data.username && el.password === action.data.password);
             return {...state, isAuth: user.length === 0?false:true, currentUser: user.length === 0?{}:user[0]};
-        case "LOG_OUT":
-            return {
-                ...state,
-                currentUser: {}, isAuth:false
+        // case "LOG_OUT":
+        //     return {
+        //         ...state,
+        //         currentUser: {}, isAuth:false
 
-            }
+        //     }
 
         default:
             return state

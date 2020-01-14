@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from "react-redux"
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { post_data } from './../redux/CommentAction';
 
 class Dashboard extends Component {
     constructor() {
@@ -14,7 +15,6 @@ class Dashboard extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-
 
     }
     handleSubmit = (e) => {
@@ -35,19 +35,16 @@ class Dashboard extends Component {
 
         }
         this.props.addingComment(newComment)
-        //this.props.history.push('/allComment')
-        console.log(this.state.arr)
-
+        this.props.history.push('/Post')
+       
 
     }
     render() {
         console.log(this.state.arr)
         return (
             <div>
-
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#"> Hi {this.props.data.login.currentUser.username} Welcome to facebook</a>
-
                     <button>Logout</button>
                 </nav>
                 <div>
@@ -59,7 +56,7 @@ class Dashboard extends Component {
                                         <label>Start a discussion</label>
                                         <textarea class="form-control" rows="3" onChange={this.handleChange} name="comment"></textarea>
                                     </div>
-                                    <button type="submit" className="btn btn-danger">Add Your Comment</button>
+                                    <button type="submit" className="btn btn-danger">Post</button>
                                 </form>
                             </div>
                         </div>
@@ -76,5 +73,9 @@ const mapStateToProps = (state) => {
 
     }
 }
-
-export default connect(mapStateToProps)(Dashboard)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addingComment: (data) => dispatch(post_data(data))
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Dashboard)

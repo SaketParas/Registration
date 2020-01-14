@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { loginUser, signoutUser } from "../redux/authAction"
+import { loginUser, signoutUser } from "../redux/authAction";
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
     constructor() {
@@ -55,6 +56,9 @@ class Login extends Component {
                         <button className="btn btn-outline-primary" onClick={this.handleClick}>Login</button>
 
                     </div>
+                   <div className="mt-5">
+                   Still not signUp ?  <Link to='/' className="btn btn-outline-danger mt-2">Register</Link>
+                   </div>
                 </div>
 
             </div>

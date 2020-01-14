@@ -46,7 +46,9 @@ import {Link} from 'react-router-dom';
                         
                         <button className = "btn btn-primary mt-2" onClick={this.handleClick} >Signup</button>
                     </div>
-                    <Link to='/Login' className="btn">Login</Link>
+                  <div className="mt-5">
+                  Alreardy signUp ?  <Link to='/Login' className="btn btn-outline-danger mt-2">Login</Link>
+                  </div>
                 </div>
                 </>
             </React.Fragment>
