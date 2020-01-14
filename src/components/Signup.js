@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from "react-redux"
-import {signupUser} from "../redux/authAction"
+import {signupUser} from "../redux/authAction";
+import {Link} from 'react-router-dom';
 
  class SignUp extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ import {signupUser} from "../redux/authAction"
                         
                         <button className = "btn btn-primary mt-2" onClick={this.handleClick} >Signup</button>
                     </div>
+                    <Link to='/Login' className="btn">Login</Link>
                 </div>
                 </>
             </React.Fragment>
