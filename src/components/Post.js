@@ -11,15 +11,15 @@ class Post extends Component {
     }
 
     render() {
-        console.log(this.props.add.stored_data);
-        let show_user = this.props.add.stored_data.map(e => {
+ console.log(this.props.allTopic);
+        let show_user = this.props.allTopic.data.map(e => {
             return (
                 <div>
                     <div class="card col-6 m-5">
                         <div class="card-body">
-                        <p>{e.userName}</p>
-                        <h4>{e.comment}</h4>
-                        <Link to='/Comment' className="btn btn-outline-danger mt-2">Comment</Link>
+                        <h3>{e.userName}</h3>
+                        <h4>{e.topic}</h4>
+                        <Link to={`/edit/${e.id}`} className="btn btn-outline-danger mt-2">Comment</Link>
                         </div>
                     </div>
                     
@@ -36,7 +36,7 @@ class Post extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        add: state.post
+        allTopic: state.allData
     }
 }
 

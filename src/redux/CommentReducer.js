@@ -1,23 +1,32 @@
 const POST = 'POST';
+const COMMENT_DATA = 'COMMENT_DATA';
 
 const initiState = {
-    stored_data: [],
+    data: [],
+    commentData: []
 }
 
-const stored_data = (state = initiState, action) => {
+const addingData = (state = initiState, action) => {
 
     switch (action.type) {
 
         case POST:
-            console.log(state, action)
+            //console.log(state, action)
             return {
                 ...state,
-                stored_data: [...state.stored_data, action.all]
+                data: [...state.data, action.all]
             }
 
+            case COMMENT_DATA:
+                 console.log(state, action);
+                 
+                return {
+                    ...state,
+                    commentData: [...state.commentData, action.all]
+                }
 
         default:
             return state
     }
 }
-export default stored_data
+export default addingData

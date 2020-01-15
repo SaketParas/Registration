@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import data from './AuthReducer';
-import stored_data from './CommentReducer';
+import addingData from './CommentReducer';
 
 
 const combineReducer = combineReducers({
     login: data,
-    post:stored_data,
+    allData: addingData,
 })
 export default combineReducer
