@@ -32,8 +32,9 @@ class SignUp extends Component {
     render() {
         return (
             <React.Fragment>
-                <div class="card mt-5 col-8 ml-5">
-                    <div class="card-body">
+                <h2 className="ml-5 text-danger">Facebook  Clone</h2>
+                <div class="card mt-2 col-8 ml-5 card-body p-3 mb-2 bg-info text-white">
+                    <div class="card-body p-3 mb-2 bg-info text-white">
                         <div className="container">
                             <div className=" mx-auto mt-5">
                                 <div className="form-group">
@@ -45,7 +46,7 @@ class SignUp extends Component {
                                     <input type="password" placeholder="Enter Password" className="form-control" id="password" value={this.state.password} onChange={this.handleChange}></input>
                                 </div>
 
-                                <button className="btn btn-outline-success mt-2" onClick={this.handleClick} >Signup</button>
+                                <button className="btn btn-outline-warning mt-2" onClick={this.handleClick} >Signup</button>
                             </div>
                             <div className="mt-5">
                                 Alreardy signUp ?  <Link to='/Login' className="btn btn-outline-danger mt-2">Login</Link>
